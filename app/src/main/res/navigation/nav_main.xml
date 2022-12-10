@@ -9,6 +9,6 @@
   <fragment
     android:id="@+id/moviesFragment"
     android:name="com.app.nshape_movie_task.presentation.movies.MoviesFragment"
-    android:label="fragment_movies"
+    android:label="@string/movies_fr_title"
     tools:layout="@layout/fragment_movies" />
 </navigation>
