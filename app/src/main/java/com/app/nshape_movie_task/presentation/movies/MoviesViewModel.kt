@@ -31,11 +31,9 @@ class MoviesViewModel @Inject constructor(private val useCase: MoviesUseCase,
   private val _favItemUpdateLiveData by lazy { MutableLiveData<FavCheck>() }
   val favItemUpdateLiveData get() = _favItemUpdateLiveData
 
-  init {
-    getMovies()
-  }
 
-  private fun getMovies() {
+
+   fun getMovies() {
     _loadingLiveData.value = true
     viewModelScope.launch {
       useCase.getTrendingMovies().collect { response ->

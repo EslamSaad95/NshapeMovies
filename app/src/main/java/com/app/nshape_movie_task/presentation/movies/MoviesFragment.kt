@@ -45,6 +45,7 @@ class MoviesFragment : Fragment() {
     observerErrorLiveData()
     observeSnackBarLiveData()
     observeFavItemLiveData()
+    viewModel.getMovies()
   }
 
   private fun observerErrorLiveData() {
