@@ -25,7 +25,7 @@ class DatabaseModule {
   fun provideAppDatabase(@ApplicationContext appContext: Context): MoviesDatabase {
     return Room.databaseBuilder(
       appContext,
-      MoviesDatabase::class.java, "movies"
+      MoviesDatabase::class.java, "moviesDb"
     ).build()
   }
 }

@@ -12,13 +12,13 @@ data class MovieDatabaseEntity(
   val movieTitle: String,
 
   @ColumnInfo(name = "movieReleaseDate")
-  val movieReleaseDate: String?,
+  val movieReleaseDate: String,
 
   @ColumnInfo(name = "moviePosterUrl")
-  val moviePosterUrl: String? ,
+  val moviePosterUrl: String ,
 
   @ColumnInfo(name = "movieRating")
-  val movieRating: Float?,
+  val movieRating: Float,
 
   @ColumnInfo(name = "MovieIsFav")
   val MovieIsFav: Boolean,

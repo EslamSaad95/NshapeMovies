@@ -1,10 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 
 }
 apply from: '../dependencies.gradle'
@@ -49,6 +49,7 @@ dependencies {
     implementation appDependency.values()
     kapt "com.google.dagger:hilt-android-compiler:2.44"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
+    kapt "androidx.room:room-compiler:2.4.3"
 
 }
 secrets {

@@ -9,17 +9,15 @@
   android:paddingHorizontal="@dimen/_8sdp"
   android:paddingVertical="@dimen/_8sdp">
 
-  <FrameLayout
-    android:id="@+id/frMoviePoster"
-    android:layout_width="@dimen/_100sdp"
-    android:layout_height="@dimen/_100sdp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+
+
 
     <androidx.appcompat.widget.AppCompatImageView
       android:id="@+id/ivMoviePoster"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_width="@dimen/_90sdp"
+      android:layout_height="@dimen/_90sdp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
       tools:background="@color/black" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -27,9 +25,11 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="end"
-      android:layout_margin="@dimen/_4sdp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginEnd="@dimen/_5sdp"
       tools:src="@drawable/ic_fav_default" />
-  </FrameLayout>
+
 
   <androidx.appcompat.widget.AppCompatTextView
     android:id="@+id/tvMovieTitle"
@@ -40,8 +40,8 @@
     android:textColor="@color/black"
     android:textSize="@dimen/_12ssp"
     android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintEnd_toStartOf="@id/ivFav"
+    app:layout_constraintStart_toEndOf="@id/ivMoviePoster"
     app:layout_constraintTop_toTopOf="parent"
     tools:text="MovieTitle" />
 
@@ -52,7 +52,7 @@
     android:layout_marginStart="@dimen/_8sdp"
     android:layout_marginTop="@dimen/_4sdp"
     android:textColor="@color/black"
-    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintStart_toEndOf="@id/ivMoviePoster"
     app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
     tools:text="20-10-2022" />
 
@@ -66,7 +66,7 @@
     android:textColor="@android:color/holo_red_dark"
     android:textStyle="bold"
     app:drawableStartCompat="@drawable/ic_star_red"
-    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintStart_toEndOf="@id/ivMoviePoster"
     app:layout_constraintTop_toBottomOf="@id/tvMovieReleaseDate"
     tools:text="1.6" />
 
