@@ -1,5 +1,6 @@
 package com.app.nshape_movie_task.domain.common
 
+import com.app.nshape_movie_task.R
 
 sealed class ApiFailure(var error: String? = null, var errorResId: Int? = null) {
 
