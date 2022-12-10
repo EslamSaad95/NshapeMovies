@@ -105,6 +105,8 @@ class MoviesFragment : Fragment() {
           else
             removeFromDatabase(item, position)
         }
+        else
+          findNavController().navigate(R.id.movieDetailsFragment, bundleOf("movieId" to item.movieId))
 
       }
     }

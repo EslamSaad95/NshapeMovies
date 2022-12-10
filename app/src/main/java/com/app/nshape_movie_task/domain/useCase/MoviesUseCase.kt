@@ -22,7 +22,7 @@ class MoviesUseCase @Inject constructor(
     if (favNewsList.isNotEmpty()) {
       favNewsList.forEach { favItems ->
         moviesList.value?.forEach { moviesItem ->
-          if (favItems.movieName == moviesItem.movieName)
+          if (favItems.movieId == moviesItem.movieId)
             moviesItem.addToFavourite = true
         }
       }

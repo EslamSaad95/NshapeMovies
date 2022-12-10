@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="com.app.nshape_movie_task.presentation.movieDetails.MovieDetailsViewModel" />
+
+    <import type="android.view.View" />
+  </data>
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.movieDetails.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:paddingHorizontal="@dimen/_15sdp"
+      android:layout_height="match_parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:id="@+id/ivMoviePoster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toStartOf="@id/ivFav"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14ssp"
+        tools:text="Movie Title"
+        android:textAlignment="viewStart"
+        android:id="@+id/tvMovieTitle"
+        android:textColor="@color/black" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivFav"
+        tools:src="@drawable/ic_fav_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/ivMoviePoster" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvMovieReleaseDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
+        tools:text="20-20-1000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginTop="@dimen/_5sdp" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_star_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieReleaseDate"
+        tools:text="1.6" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieRating"
+        android:id="@+id/tvMovieVoteAverage"
+        tools:text="Vote count: 20"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieVoteAverage"
+        android:id="@+id/tvMovieLang"
+        tools:text="ar"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMovieLang"
+        android:id="@+id/tvMovieOverview"
+        android:textAlignment="viewStart"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        tools:text="Movie Overview" />
+
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
+
+      <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility='@{viewModel.loadingLiveData.booleanValue()==false? View.GONE : View.VISIBLE}'
+        tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.core.widget.NestedScrollView>
+</layout>

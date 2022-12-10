@@ -14,8 +14,13 @@
   <!-- endregion -->
 
   <!--region moviesFragment-->
-
   <string name="movies_fr_title">Movies</string>
+  <!--endregion-->
+
+  <!--region MovieDetailsFragment-->
+  <string name="movieDetails_fr_title">Movie Details</string>
+  <string name="movieDetails_fr_vote_count">vote count :  %1$s </string>
+  <string name="movieDetails_fr_language">Language : %1$s</string>
   <!--endregion-->
 
 </resources>
