@@ -9,7 +9,7 @@ fun List<MoviesDto.MoviesList>.toMoviesEntity(): List<MoviesEntity> {
     MoviesEntity(
       it.posterPath,
       it.originalTitle,
-      it.voteAverage.toFloat(),
+      it.popularity.toFloat(),
       it.releaseDate,
       false
     )
