@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingHorizontal="@dimen/_8sdp"
+  android:paddingVertical="@dimen/_8sdp">
+
+  <FrameLayout
+    android:id="@+id/frMoviePoster"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="@dimen/_100sdp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ivMoviePoster"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:background="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ivFav"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="end"
+      android:layout_margin="@dimen/_4sdp"
+      tools:src="@drawable/ic_fav_default" />
+  </FrameLayout>
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/tvMovieTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:textAlignment="viewStart"
+    android:textColor="@color/black"
+    android:textSize="@dimen/_12ssp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="MovieTitle" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/tvMovieReleaseDate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:textColor="@color/black"
+    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
+    tools:text="20-10-2022" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/tvMovieRating"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:gravity="center"
+    android:textColor="@android:color/holo_red_dark"
+    android:textStyle="bold"
+    app:drawableStartCompat="@drawable/ic_star_red"
+    app:layout_constraintStart_toEndOf="@id/frMoviePoster"
+    app:layout_constraintTop_toBottomOf="@id/tvMovieReleaseDate"
+    tools:text="1.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
